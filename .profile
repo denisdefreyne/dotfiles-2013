@@ -14,26 +14,9 @@ export PATH
 
 export MANPATH=/usr/share/man:/usr/local/share/man:/usr/X11/man
 
-CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure/1.3.0/clojure-1.3.0.jar
-CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
-export CLASSPATH
-
 ##### rbenv
 
 eval "$(rbenv init -)"
-
-##### go
-
-export PATH=$PATH:/usr/local/go/bin
-export GOROOT=/usr/local/go
-
-GOPATH=/Users/ddfreyne/Documents/Development/Go/External
-GOPATH=$GOPATH:/Users/ddfreyne/Documents/Development/Go/Projects/digraph
-GOPATH=$GOPATH:/Users/ddfreyne/Documents/Development/Go/Projects/nanog
-GOPATH=$GOPATH:/Users/ddfreyne/Documents/Development/Go/Projects/ultrapants
-GOPATH=$GOPATH:/Users/ddfreyne/Documents/Development/Go/Projects/kbc-csv-to-qif
-GOPATH=$GOPATH:/Users/ddfreyne/Documents/Development/Go/Projects/collections
-export GOPATH
 
 ##### encoding
 
@@ -61,7 +44,6 @@ alias sudo='sudo '
 alias e="mate -r"
 alias ls="ls -G"
 alias ll="ls -l"
-alias lc="find . -name \"*.[chm]\" -or -name \"*.rb\" -or -name \"*.leg\" -or -name \"*.mm\" -or -name \"*.php\" -or -name \"*.java\" | xargs cat | wc -l"
 alias reveal="open -R"
 
 alias hgdiff="hg diff | pygmentize -l diff -O encoding=utf-8"
