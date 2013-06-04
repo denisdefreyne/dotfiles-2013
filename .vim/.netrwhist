@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/ddfreyne/Documents/Development/stoneship-site/content/reviews'
+let g:netrw_dirhist_2='/Users/ddfreyne/Documents/Development/nanoc/repos/site/lib/filters'
+let g:netrw_dirhist_3='/Users/ddfreyne/Documents/Development/nanoc/repos/guard-nanoc/.git'
+let g:netrw_dirhist_4='/Users/ddfreyne/Desktop/guardtestnanoc/layouts'
+let g:netrw_dirhist_5='/Users/ddfreyne/Documents/Development/nanoc/repos/nanoc/lib/nanoc/base/result_data'
+let g:netrw_dirhist_6='/Users/ddfreyne/Documents/Development/nanoc/repos/site'
