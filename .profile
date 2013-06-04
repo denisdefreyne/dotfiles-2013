@@ -1,7 +1,8 @@
 ##### paths
 
 PATH=
-PATH=~/.rbenv/bin
+PATH=$PATH:/usr/local/share/python
+PATH=$PATH:~/.rbenv/bin
 PATH=$PATH:/usr/local/sbin:/usr/local/bin
 PATH=$PATH:/usr/sbin:/usr/bin
 PATH=$PATH:/sbin:/bin
@@ -10,13 +11,14 @@ PATH=$PATH:/usr/local/texlive/2011/bin/universal-darwin
 PATH=$PATH:/usr/local/texlive/2011/bin/x86_64-darwin
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:~/.cabal/bin
+PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export PATH
 
 export MANPATH=/usr/share/man:/usr/local/share/man:/usr/X11/man
 
-##### rbenv
+##### go
 
-eval "$(rbenv init -)"
+export GOPATH=$HOME/Documents/Development/Go/Projects
 
 ##### encoding
 
@@ -25,8 +27,14 @@ export LC_ALL=en_US.UTF-8
 
 ##### misc
 
-export EDITOR=vim
+export EDITOR="vim -f"
+
+##### ruby
+
 export RUBYOPT="rrubygems"
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+chruby ruby-1.9.3-p392
 
 ##### man colors
 
@@ -40,15 +48,14 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 ##### aliases
 
-alias sudo='sudo '
-alias e="mate -r"
-alias ls="ls -G"
-alias ll="ls -l"
+alias ls="ls --color"
+alias ll="ls -l --color"
 alias reveal="open -R"
-
-alias hgdiff="hg diff | pygmentize -l diff -O encoding=utf-8"
+alias be="bundle exec"
 
 alias stfu="osascript -e 'set volume output muted true'"
 alias unstfu="osascript -e 'set volume output muted false'"
 
-alias nsync="pushd /Users/ddfreyne/Documents/Development/nanoc ; for i in nanoc/out site/out ; do pushd \$i ; hg pull ; hg push gh ; popd ; done ; popd"
+alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+alias asdf="head -n 40 /dev/random | sha1sum | cut - -b 1-40"

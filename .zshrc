@@ -2,7 +2,7 @@ source ~/.profile
 
 ########## ZSH STUFF
 
-autoload colors
+autoload -U colors && colors
 
 ########## HISTORY
 
@@ -34,10 +34,18 @@ hg_bookmark() {
 	fi
 }
 
-PROMPT_COLOR='%{\e[1;34m%}'
+git_branch() {
+	if [[ -d .git ]]
+		then echo " @ $(git rev-parse --abbrev-ref HEAD)"
+		else echo " "
+	fi
+}
 
-PROMPT='$(print $PROMPT_COLOR)%Btahontaenrat %25<…<%~%<< %(?.✓.✗) ▸%b '
-RPROMPT='$(print $PROMPT_COLOR)%B$(hg_bookmark)%b'
+PROMPT_COLOR='%{\e[1;31m%}'
+EXIT_COLOR="%(?..%{$fg[red]%})"
+
+PROMPT='$(print $PROMPT_COLOR)%Btahontaenrat %25<…<%~%<< ${EXIT_COLOR}▸%b '
+RPROMPT='$(print $PROMPT_COLOR)%B$(hg_bookmark)$(git_branch)%b'
 
 ########## COLORS
 
