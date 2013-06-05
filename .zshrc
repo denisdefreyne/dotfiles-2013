@@ -21,11 +21,6 @@ current_time() {
 	echo "$(date "+%H:%M")"
 }
 
-# Prints the current Ruby version (1.8.6, 1.9.1, ...)
-ruby_version() {
-	echo " $(echo $MY_RUBY_HOME | sed -e 's_^.*/__' | sed -e 's/-p[0-9][0-9]*//')"
-}
-
 git_branch() {
 	if [[ -d .git ]]
 		then echo " @ $(git rev-parse --abbrev-ref HEAD)"
