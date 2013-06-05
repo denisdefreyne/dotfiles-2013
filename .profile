@@ -1,16 +1,12 @@
 ##### paths
 
 PATH=
+PATH=/bin:/sbin:$PATH
+PATH=/usr/bin:/usr/sbin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# user
-PATH=$PATH:~/.rbenv/shims
+PATH=~/.rbenv/shims:$PATH
 PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-PATH=$PATH:/usr/local/sbin
-PATH=$PATH:/usr/local/bin
-PATH=$PATH:/usr/sbin
-PATH=$PATH:/usr/bin
-PATH=$PATH:/sbin
-PATH=$PATH:/bin
 
 export PATH
 
