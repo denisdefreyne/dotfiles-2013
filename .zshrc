@@ -26,14 +26,6 @@ ruby_version() {
 	echo " $(echo $MY_RUBY_HOME | sed -e 's_^.*/__' | sed -e 's/-p[0-9][0-9]*//')"
 }
 
-# Prints the current Mercurial bookmark when in a Mercurial repository
-hg_bookmark() {
-	if [[ -f .hg/bookmarks.current ]]
-		then echo " @ $(cat .hg/bookmarks.current)"
-		else echo " "
-	fi
-}
-
 git_branch() {
 	if [[ -d .git ]]
 		then echo " @ $(git rev-parse --abbrev-ref HEAD)"
@@ -45,7 +37,7 @@ PROMPT_COLOR='%{\e[1;31m%}'
 EXIT_COLOR="%(?..%{$fg[red]%})"
 
 PROMPT='$(print $PROMPT_COLOR)%Btahontaenrat %25<…<%~%<< ${EXIT_COLOR}▸%b '
-RPROMPT='$(print $PROMPT_COLOR)%B$(hg_bookmark)$(git_branch)%b'
+RPROMPT='$(print $PROMPT_COLOR)%B$(git_branch)%b'
 
 ########## COLORS
 
